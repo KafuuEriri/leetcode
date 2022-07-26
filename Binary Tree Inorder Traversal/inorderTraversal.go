@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(inorderTraversal())
+	fmt.Println(inorderTraversal(&TreeNode{}))
 }
 
 // 在二叉树中，首先遍历左子树，然后访问根结点，最后遍历右子树，在遍历左右子树时，仍然采用这种规则，这样的遍历方式叫做二叉树的中序遍历。
