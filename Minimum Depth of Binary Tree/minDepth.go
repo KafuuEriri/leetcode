@@ -31,6 +31,7 @@ func minDepth(root *TreeNode) int {
 	}
 	left := minDepth(root.Left)
 	right := minDepth(root.Right)
+	// 分情况，如果左右节点有为空的要计算最大，如果都左右子树都不为空则去最浅的+1
 	if left != 0 && right != 0 {
 		return min(left, right) + 1
 	} else {
