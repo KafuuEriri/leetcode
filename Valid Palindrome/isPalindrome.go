@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-var s string = "race a car"
+var s string = "A man, a plan, a canal: Panama"
 
 func main() {
 	fmt.Println(isPalindrome(s))
@@ -19,7 +19,7 @@ func isPalindrome(s string) bool {
 	}
 	processedString := strings.ToLower(reg.ReplaceAllString(s, ""))
 	l := len(processedString)
-	for i := 0; i < l; i++ {
+	for i := 0; i < (l / 2); i++ {
 		if processedString[i] != processedString[l-1-i] {
 			return false
 		}
