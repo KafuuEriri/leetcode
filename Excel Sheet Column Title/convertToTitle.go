@@ -10,14 +10,20 @@ var temp map[int]string = map[int]string{1: "A", 2: "B", 3: "C", 4: "D", 5: "E",
 func convertToTitle(columnNumber int) string {
 	res := ""
 	for columnNumber > 0 {
-		res = temp[((columnNumber-1)%26)+1] + res
-		columnNumber = (columnNumber - 1) / 26
+		m := columnNumber % 26
+		if m == 0 {
+			m = 26
+			// 注意转换其实是1-26,而不是0-25,如果刚好26整除,应该-1
+			columnNumber--
+		}
+		res = temp[m] + res
+		columnNumber = columnNumber / 26
 	}
 	return res
 }
 
 func main() {
-	columnNumber := 2000
+	columnNumber := 701
 	res := convertToTitle(columnNumber)
 	fmt.Println(res)
 }
